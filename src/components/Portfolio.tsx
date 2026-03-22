@@ -1,5 +1,4 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { useState } from "react";
 
 const works = [
   { title: "O Silêncio das Marés", year: "2024", category: "Drama Contemporâneo", desc: "Uma investigação sobre memória e pertencimento através de três gerações de mulheres à beira-mar." },
@@ -12,7 +11,6 @@ const works = [
 
 export default function Portfolio() {
   const { ref, isVisible } = useScrollReveal();
-  const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
 
   return (
     <section id="trabalhos" className="py-24 md:py-32 section-padding">
@@ -25,9 +23,9 @@ export default function Portfolio() {
           <div className="gold-line mt-6" />
         </div>
 
-        <div className="space-y-0 border-t border-border/50">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {works.map((work, i) => (
-            <WorkRow key={work.title} work={work} index={i} isHovered={hoveredIdx === i} onHover={() => setHoveredIdx(i)} onLeave={() => setHoveredIdx(null)} />
+            <WorkCard key={work.title} work={work} index={i} />
           ))}
         </div>
       </div>
@@ -35,33 +33,27 @@ export default function Portfolio() {
   );
 }
 
-function WorkRow({ work, index, isHovered, onHover, onLeave }: {
-  work: typeof works[number]; index: number; isHovered: boolean; onHover: () => void; onLeave: () => void;
-}) {
+function WorkCard({ work, index }: { work: typeof works[number]; index: number }) {
   const { ref, isVisible } = useScrollReveal();
 
   return (
     <div
       ref={ref}
-      onMouseEnter={onHover}
-      onMouseLeave={onLeave}
-      className={`border-b border-border/50 py-6 md:py-8 cursor-pointer group transition-all duration-500 ${
-        isHovered ? "bg-muted/30 px-6 -mx-6" : ""
-      } ${isVisible ? "animate-fade-up" : "opacity-0"}`}
+      className={`group bg-card border border-border/50 p-6 flex flex-col transition-all duration-500 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 ${
+        isVisible ? "animate-fade-up" : "opacity-0"
+      }`}
       style={{ animationDelay: `${index * 0.08}s` }}
     >
-      <div className="flex flex-col md:flex-row md:items-center gap-3 md:gap-8">
-        <span className="text-primary/50 text-sm font-mono tabular-nums w-12 shrink-0">{work.year}</span>
-        <h3 className="font-display text-xl md:text-2xl font-semibold group-hover:text-primary transition-colors duration-300 flex-1">
-          {work.title}
-        </h3>
-        <span className="text-xs tracking-widest uppercase text-foreground/40 border border-border/50 px-3 py-1 w-fit">
+      <div className="flex items-center justify-between mb-4">
+        <span className="text-primary/50 text-sm font-mono tabular-nums">{work.year}</span>
+        <span className="text-[10px] tracking-widest uppercase text-foreground/40 border border-border/50 px-2 py-0.5">
           {work.category}
         </span>
       </div>
-      <div className={`overflow-hidden transition-all duration-500 ${isHovered ? "max-h-24 opacity-100 mt-4" : "max-h-0 opacity-0"}`}>
-        <p className="text-foreground/50 text-sm leading-relaxed max-w-2xl md:ml-20">{work.desc}</p>
-      </div>
+      <h3 className="font-display text-xl font-semibold mb-3 group-hover:text-primary transition-colors duration-300">
+        {work.title}
+      </h3>
+      <p className="text-foreground/50 text-sm leading-relaxed flex-1">{work.desc}</p>
     </div>
   );
 }

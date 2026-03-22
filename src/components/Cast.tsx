@@ -1,12 +1,18 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import castMariana from "@/assets/cast-mariana.jpg";
+import castRafael from "@/assets/cast-rafael.jpg";
+import castCamila from "@/assets/cast-camila.jpg";
+import castLucas from "@/assets/cast-lucas.jpg";
+import castIsabela from "@/assets/cast-isabela.jpg";
+import castThiago from "@/assets/cast-thiago.jpg";
 
 const cast = [
-  { name: "Mariana Torres", role: "Atriz & Diretora", specialty: "Teatro físico, dramaturgia contemporânea", initials: "MT" },
-  { name: "Rafael Mendes", role: "Ator", specialty: "Atuação dramática, teatro de rua", initials: "RM" },
-  { name: "Camila Duarte", role: "Atriz & Bailarina", specialty: "Dança contemporânea, performance", initials: "CD" },
-  { name: "Lucas Ferreira", role: "Ator & Músico", specialty: "Canto lírico, teatro musical", initials: "LF" },
-  { name: "Isabela Rocha", role: "Atriz", specialty: "Improvisação, clown, commedia dell'arte", initials: "IR" },
-  { name: "Thiago Alves", role: "Ator & Cenógrafo", specialty: "Cenografia imersiva, teatro experimental", initials: "TA" },
+  { name: "Mariana Torres", role: "Atriz & Diretora", specialty: "Teatro físico, dramaturgia contemporânea", photo: castMariana },
+  { name: "Rafael Mendes", role: "Ator", specialty: "Atuação dramática, teatro de rua", photo: castRafael },
+  { name: "Camila Duarte", role: "Atriz & Bailarina", specialty: "Dança contemporânea, performance", photo: castCamila },
+  { name: "Lucas Ferreira", role: "Ator & Músico", specialty: "Canto lírico, teatro musical", photo: castLucas },
+  { name: "Isabela Rocha", role: "Atriz", specialty: "Improvisação, clown, commedia dell'arte", photo: castIsabela },
+  { name: "Thiago Alves", role: "Ator & Cenógrafo", specialty: "Cenografia imersiva, teatro experimental", photo: castThiago },
 ];
 
 export default function Cast() {
@@ -23,7 +29,7 @@ export default function Cast() {
           <div className="gold-line mx-auto mt-6" />
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
           {cast.map((actor, i) => (
             <CastCard key={actor.name} actor={actor} index={i} />
           ))}
@@ -39,17 +45,24 @@ function CastCard({ actor, index }: { actor: typeof cast[number]; index: number 
   return (
     <div
       ref={ref}
-      className={`group bg-card border border-border/50 p-6 transition-all duration-500 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 ${
+      className={`group overflow-hidden bg-card border border-border/50 transition-all duration-500 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 ${
         isVisible ? "animate-fade-up" : "opacity-0"
       }`}
       style={{ animationDelay: `${index * 0.08}s` }}
     >
-      <div className="w-16 h-16 rounded-full bg-secondary flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors duration-500">
-        <span className="font-display text-lg font-semibold text-primary">{actor.initials}</span>
+      <div className="aspect-[3/4] overflow-hidden">
+        <img
+          src={actor.photo}
+          alt={actor.name}
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          loading="lazy"
+        />
       </div>
-      <h3 className="font-display text-xl font-semibold mb-1">{actor.name}</h3>
-      <p className="text-primary text-sm font-medium mb-3">{actor.role}</p>
-      <p className="text-foreground/50 text-sm leading-relaxed">{actor.specialty}</p>
+      <div className="p-4">
+        <h3 className="font-display text-base md:text-lg font-semibold mb-0.5">{actor.name}</h3>
+        <p className="text-primary text-xs font-medium mb-2">{actor.role}</p>
+        <p className="text-foreground/50 text-xs leading-relaxed">{actor.specialty}</p>
+      </div>
     </div>
   );
 }
