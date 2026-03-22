@@ -11,6 +11,7 @@ const works = [
 
 export default function Portfolio() {
   const { ref, isVisible } = useScrollReveal();
+  const { ref: gridRef, isVisible: gridVisible } = useScrollReveal();
 
   return (
     <section id="trabalhos" className="py-24 md:py-32 section-padding">
@@ -23,9 +24,9 @@ export default function Portfolio() {
           <div className="gold-line mt-6" />
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {works.map((work, i) => (
-            <WorkCard key={work.title} work={work} index={i} />
+        <div ref={gridRef} className={`grid sm:grid-cols-2 lg:grid-cols-3 gap-5 ${gridVisible ? "animate-fade-up" : "opacity-0"}`}>
+          {works.map((work) => (
+            <WorkCard key={work.title} work={work} />
           ))}
         </div>
       </div>
@@ -33,16 +34,10 @@ export default function Portfolio() {
   );
 }
 
-function WorkCard({ work, index }: { work: typeof works[number]; index: number }) {
-  const { ref, isVisible } = useScrollReveal();
-
+function WorkCard({ work }: { work: typeof works[number] }) {
   return (
     <div
-      ref={ref}
-      className={`group bg-card border border-border/50 p-6 flex flex-col transition-all duration-500 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 ${
-        isVisible ? "animate-fade-up" : "opacity-0"
-      }`}
-      style={{ animationDelay: `${index * 0.08}s` }}
+      className="group bg-card border border-border/50 p-6 flex flex-col transition-all duration-500 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5"
     >
       <div className="flex items-center justify-between mb-4">
         <span className="text-primary/50 text-sm font-mono tabular-nums">{work.year}</span>

@@ -15,7 +15,7 @@ export default function About() {
           <div className="gold-line mt-6" />
         </div>
 
-        <div ref={r2} className={`grid md:grid-cols-2 gap-12 md:gap-20 ${v2 ? "animate-fade-up" : "opacity-0"}`} style={{ animationDelay: "0.15s" }}>
+        <div ref={r2} className={`grid md:grid-cols-2 gap-12 md:gap-20 ${v2 ? "animate-fade-up animation-delay-0.15s" : "opacity-0"}`}>
           <div className="space-y-6 text-foreground/70 text-pretty leading-relaxed">
             <p>
               Fundada em 2012, a <strong className="text-foreground">CenaViva</strong> nasceu do encontro de artistas que compartilham a crença no poder transformador do teatro. Com raízes no teatro contemporâneo e experimental, nossa companhia busca investigar as fronteiras entre corpo, palavra e espaço cênico.

@@ -15,17 +15,17 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 text-center section-padding max-w-4xl mx-auto">
-        <div className="gold-line mx-auto mb-8 opacity-0 animate-fade-in" style={{ animationDelay: "0.2s" }} />
-        <p className="text-sm md:text-base tracking-[0.4em] uppercase text-primary/80 mb-6 opacity-0 animate-fade-up" style={{ animationDelay: "0.3s" }}>
+        <div className="gold-line mx-auto mb-8 opacity-0 animate-fade-in animation-delay-0.2s" />
+        <p className="text-sm md:text-base tracking-[0.4em] uppercase text-primary/80 mb-6 opacity-0 animate-fade-up animation-delay-0.3s">
           Companhia de Artes Cênicas
         </p>
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold tracking-tight leading-[0.95] mb-6 opacity-0 animate-fade-up" style={{ animationDelay: "0.5s" }}>
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold tracking-tight leading-[0.95] mb-6 opacity-0 animate-fade-up animation-delay-0.5s">
           Cena<span className="text-primary">Viva</span>
         </h1>
-        <p className="text-lg md:text-xl text-foreground/60 font-light max-w-xl mx-auto mb-12 opacity-0 animate-fade-up text-pretty" style={{ animationDelay: "0.7s" }}>
+        <p className="text-lg md:text-xl text-foreground/60 font-light max-w-xl mx-auto mb-12 opacity-0 animate-fade-up text-pretty animation-delay-0.7s">
           Onde o corpo encontra a palavra e a emoção ganha palco.
         </p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 opacity-0 animate-fade-up" style={{ animationDelay: "0.9s" }}>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 opacity-0 animate-fade-up animation-delay-0.9s">
           <button
             onClick={() => scrollTo("#sobre")}
             className="px-8 py-3 bg-primary text-primary-foreground font-semibold text-sm tracking-widest uppercase transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 active:scale-[0.97]"
@@ -42,7 +42,7 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-0 animate-fade-in" style={{ animationDelay: "1.4s" }}>
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-0 animate-fade-in animation-delay-1.4s">
         <div className="w-px h-12 bg-gradient-to-b from-primary/60 to-transparent animate-pulse" />
       </div>
     </section>

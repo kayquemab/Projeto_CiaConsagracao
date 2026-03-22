@@ -17,6 +17,7 @@ const cast = [
 
 export default function Cast() {
   const { ref, isVisible } = useScrollReveal();
+  const { ref: gridRef, isVisible: gridVisible } = useScrollReveal();
 
   return (
     <section id="elenco" className="py-24 md:py-32 section-padding bg-muted/30">
@@ -29,9 +30,9 @@ export default function Cast() {
           <div className="gold-line mx-auto mt-6" />
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
-          {cast.map((actor, i) => (
-            <CastCard key={actor.name} actor={actor} index={i} />
+        <div ref={gridRef} className={`grid grid-cols-2 md:grid-cols-4 gap-5 ${gridVisible ? "animate-fade-up" : "opacity-0"}`}>
+          {cast.map((actor) => (
+            <CastCard key={actor.name} actor={actor} />
           ))}
         </div>
       </div>
@@ -39,16 +40,10 @@ export default function Cast() {
   );
 }
 
-function CastCard({ actor, index }: { actor: typeof cast[number]; index: number }) {
-  const { ref, isVisible } = useScrollReveal();
-
+function CastCard({ actor }: { actor: typeof cast[number] }) {
   return (
     <div
-      ref={ref}
-      className={`group overflow-hidden bg-card border border-border/50 transition-all duration-500 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 ${
-        isVisible ? "animate-fade-up" : "opacity-0"
-      }`}
-      style={{ animationDelay: `${index * 0.08}s` }}
+      className="group overflow-hidden bg-card border border-border/50 transition-all duration-500 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5"
     >
       <div className="aspect-[3/4] overflow-hidden">
         <img
