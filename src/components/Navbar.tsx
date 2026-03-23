@@ -34,7 +34,7 @@ export default function Navbar() {
     >
       <div className="section-padding section-container flex items-center justify-between">
         <button onClick={() => handleClick("#inicio")} className="font-display text-xl md:text-2xl tracking-wider gold-text hover:opacity-80 transition-opacity">
-          CENA<span className="font-light text-foreground/80">VIVA</span>
+          Cia. <span className="font-light text-foreground/80">Consagração</span>
         </button>
 
         {/* Desktop */}

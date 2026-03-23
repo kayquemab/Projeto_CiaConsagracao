@@ -20,10 +20,10 @@ export default function Hero() {
           Companhia de Artes Cênicas
         </p>
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold tracking-tight leading-[0.95] mb-6 opacity-0 animate-fade-up animation-delay-0.5s">
-          Cena<span className="text-primary">Viva</span>
+          Cia.<span className="text-primary">Consagração</span>
         </h1>
         <p className="text-lg md:text-xl text-foreground/60 font-light max-w-xl mx-auto mb-12 opacity-0 animate-fade-up text-pretty animation-delay-0.7s">
-          Onde o corpo encontra a palavra e a emoção ganha palco.
+          Levando a Palavra através do Teatro.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 opacity-0 animate-fade-up animation-delay-0.9s">
           <button

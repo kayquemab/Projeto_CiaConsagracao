@@ -1,12 +1,36 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const works = [
-  { title: "O Silêncio das Marés", year: "2024", category: "Drama Contemporâneo", desc: "Uma investigação sobre memória e pertencimento através de três gerações de mulheres à beira-mar." },
-  { title: "Corpo em Trânsito", year: "2023", category: "Performance", desc: "Espetáculo de teatro físico que explora os limites entre dança e narrativa no espaço urbano." },
-  { title: "A Última Carta", year: "2022", category: "Teatro Experimental", desc: "Montagem imersiva baseada em correspondências reais encontradas em um antiquário de Lisboa." },
-  { title: "Ecos de Hamlet", year: "2021", category: "Releitura Clássica", desc: "Releitura contemporânea do clássico shakespeariano ambientada em uma metrópole distópica." },
-  { title: "Fragmentos do Agora", year: "2020", category: "Teatro Documental", desc: "Peça construída a partir de depoimentos reais coletados durante o isolamento social." },
-  { title: "Raízes Aéreas", year: "2019", category: "Circo-Teatro", desc: "Espetáculo que mescla técnicas circenses com narrativa poética sobre migração e identidade." },
+  {
+    title: "O Calice",
+    year: "2024",
+    category: "Drama Contemporâneo",
+    desc: "Peça que retrata um momento de entrega e decisão, abordando fé, obediência e propósito.",
+  },
+  {
+    title: "Retratos",
+    year: "2023",
+    category: "Performance",
+    desc: "Espetáculo que apresenta diferentes histórias e realidades, refletindo sobre identidade e transformação.",
+  },
+  {
+    title: "Cartas",
+    year: "2022",
+    category: "Teatro Experimental",
+    desc: "Narrativa construída a partir de mensagens e relatos, trazendo reflexões sobre sentimentos e escolhas.",
+  },
+  {
+    title: "Solitário",
+    year: "2021",
+    category: "Releitura Clássica",
+    desc: "Peça que aborda a solidão e os conflitos internos, destacando a importância de direção e propósito.",
+  },
+  {
+    title: "O Tempo",
+    year: "2020",
+    category: "Teatro Documental",
+    desc: "Espetáculo que reflete sobre o tempo e suas fases, mostrando mudanças, aprendizados e recomeços.",
+  },
 ];
 
 export default function Portfolio() {

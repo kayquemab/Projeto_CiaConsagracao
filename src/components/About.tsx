@@ -7,33 +7,67 @@ export default function About() {
   return (
     <section id="sobre" className="py-24 md:py-32 section-padding">
       <div className="section-container">
-        <div ref={r1} className={`mb-16 max-w-3xl ${v1 ? "animate-fade-up" : "opacity-0"}`}>
-          <p className="text-sm tracking-[0.3em] uppercase text-primary mb-4">Sobre nós</p>
+        <div
+          ref={r1}
+          className={`mb-16 max-w-3xl ${
+            v1 ? "animate-fade-up" : "opacity-0"
+          }`}
+        >
+          <p className="text-sm tracking-[0.3em] uppercase text-primary mb-4">
+            Sobre nós
+          </p>
+
           <h2 className="text-3xl md:text-5xl font-display font-bold mb-4 text-balance leading-tight">
-            Uma história escrita no palco
+            Uma história marcada pela consagração
           </h2>
+
           <div className="gold-line mt-6" />
         </div>
 
-        <div ref={r2} className={`grid md:grid-cols-2 gap-12 md:gap-20 ${v2 ? "animate-fade-up animation-delay-0.15s" : "opacity-0"}`}>
+        <div
+          ref={r2}
+          className={`grid md:grid-cols-2 gap-12 md:gap-20 ${
+            v2 ? "animate-fade-up animation-delay-0.15s" : "opacity-0"
+          }`}
+        >
           <div className="space-y-6 text-foreground/70 text-pretty leading-relaxed">
             <p>
-              Fundada em 2012, a <strong className="text-foreground">CenaViva</strong> nasceu do encontro de artistas que compartilham a crença no poder transformador do teatro. Com raízes no teatro contemporâneo e experimental, nossa companhia busca investigar as fronteiras entre corpo, palavra e espaço cênico.
+              Fundada com o propósito de servir a Deus através da arte, a{" "}
+              <strong className="text-foreground">Cia Consagração</strong>{" "}
+              nasceu da união de jovens que decidiram usar o teatro como
+              instrumento de transformação, levando mensagens de fé, esperança e
+              arrependimento.
             </p>
+
             <p>
-              Ao longo de mais de uma década, levamos nossas produções a festivais nacionais e internacionais, construindo uma trajetória marcada pela ousadia criativa e pelo compromisso com a excelência artística.
+              Ao longo de sua trajetória, o grupo tem impactado vidas por meio
+              de apresentações que vão além do palco, alcançando corações e
+              despertando pessoas para um relacionamento verdadeiro com Deus.
             </p>
           </div>
 
           <div className="space-y-8">
             {[
-              { title: "Missão", text: "Provocar reflexão e empatia através de experiências cênicas que dialogam com o mundo contemporâneo." },
-              { title: "Visão", text: "Ser referência em teatro experimental na América Latina, reconhecida pela originalidade e profundidade de nossas criações." },
-              { title: "Valores", text: "Colaboração, ousadia, diversidade, rigor artístico e acessibilidade cultural." },
+              {
+                title: "Missão",
+                text: "Levar a Palavra de Deus através do teatro, impactando vidas e despertando corações para viverem uma vida de consagração.",
+              },
+              {
+                title: "Visão",
+                text: "Ser um ministério reconhecido por transformar vidas por meio da arte, levando o evangelho com verdade, excelência e unção.",
+              },
+              {
+                title: "Valores",
+                text: "Consagração, obediência a Deus, unidade, compromisso com a Palavra e amor pelas vidas.",
+              },
             ].map((item) => (
               <div key={item.title} className="border-l border-primary/30 pl-6">
-                <h3 className="font-display text-lg font-semibold text-primary mb-2">{item.title}</h3>
-                <p className="text-foreground/60 text-sm leading-relaxed">{item.text}</p>
+                <h3 className="font-display text-lg font-semibold text-primary mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-foreground/60 text-sm leading-relaxed">
+                  {item.text}
+                </p>
               </div>
             ))}
           </div>

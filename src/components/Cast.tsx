@@ -7,12 +7,72 @@ import castIsabela from "@/assets/cast-isabela.jpg";
 import castThiago from "@/assets/cast-thiago.jpg";
 
 const cast = [
-  { name: "Mariana Torres", role: "Atriz & Diretora", specialty: "Teatro físico, dramaturgia contemporânea", photo: castMariana },
-  { name: "Rafael Mendes", role: "Ator", specialty: "Atuação dramática, teatro de rua", photo: castRafael },
-  { name: "Camila Duarte", role: "Atriz & Bailarina", specialty: "Dança contemporânea, performance", photo: castCamila },
-  { name: "Lucas Ferreira", role: "Ator & Músico", specialty: "Canto lírico, teatro musical", photo: castLucas },
-  { name: "Isabela Rocha", role: "Atriz", specialty: "Improvisação, clown, commedia dell'arte", photo: castIsabela },
-  { name: "Thiago Alves", role: "Ator & Cenógrafo", specialty: "Cenografia imersiva, teatro experimental", photo: castThiago },
+  {
+    name: "Camila Santos",
+    role: "Atriz",
+    specialty: "Interpretação dramática e teatro evangelístico",
+    photo: castCamila,
+  },
+  {
+    name: "Herbert Barros Moraes",
+    role: "Ator",
+    specialty: "Teatro de rua e abordagem criativa",
+    photo: castRafael,
+  },
+  {
+    name: "Filipe Gonçalves",
+    role: "Ator",
+    specialty: "Expressão corporal e teatro físico",
+    photo: castLucas,
+  },
+  {
+    name: "Débora Mendes",
+    role: "Atriz",
+    specialty: "Canto e teatro musical cristão",
+    photo: castMariana,
+  },
+  {
+    name: "Lívia Souza",
+    role: "Atriz",
+    specialty: "Improvisação e teatro espontâneo",
+    photo: castIsabela,
+  },
+  {
+    name: "Andrew Araujo",
+    role: "Ator",
+    specialty: "Personagens bíblicos e encenações históricas",
+    photo: castThiago,
+  },
+  {
+    name: "Julia Terribile",
+    role: "Atriz",
+    specialty: "Dança e expressão artística no teatro",
+    photo: castCamila,
+  },
+  {
+    name: "Danilo Barboza",
+    role: "Ator",
+    specialty: "Atuação dramática e direção de cena",
+    photo: castRafael,
+  },
+  {
+    name: "Natália Capozzi",
+    role: "Atriz",
+    specialty: "Interpretação emocional e teatro ministerial",
+    photo: castMariana,
+  },
+  {
+    name: "Camily Maciel",
+    role: "Atriz",
+    specialty: "Expressão corporal e coreografia",
+    photo: castIsabela,
+  },
+  {
+    name: "Sarah Lorrayne",
+    role: "Atriz",
+    specialty: "Teatro evangelístico e impacto social",
+    photo: castCamila,
+  },
 ];
 
 export default function Cast() {

@@ -66,9 +66,9 @@ export default function Contact() {
           {/* Info */}
           <div className="md:col-span-2 space-y-8">
             {[
-              { icon: Mail, label: "Email", value: "contato@cenaviva.art.br" },
-              { icon: Phone, label: "Telefone", value: "+55 (11) 3842-7190" },
-              { icon: MapPin, label: "Endereço", value: "Rua Augusta, 1247 — São Paulo, SP" },
+              { icon: Mail, label: "Email", value: "escolamudat@gmail.com" },
+              { icon: Phone, label: "Telefone", value: "+55 (11) 94900=4071" },
+              { icon: MapPin, label: "Endereço", value: "Alameda Tutóia, 446 - Guarulhos" },
             ].map((item) => (
               <div key={item.label} className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center shrink-0">
