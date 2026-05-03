@@ -17,7 +17,7 @@ export default function About() {
             Sobre nós
           </p>
 
-          <h2 className="text-3xl md:text-5xl font-display font-bold mb-4 text-balance leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4 text-balance leading-tight">
             Uma história marcada pela consagração
           </h2>
 
@@ -26,7 +26,7 @@ export default function About() {
 
         <div
           ref={r2}
-          className={`grid md:grid-cols-2 gap-12 md:gap-20 ${
+          className={`grid md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-20 ${
             v2 ? "animate-fade-up animation-delay-0.15s" : "opacity-0"
           }`}
         >
@@ -61,11 +61,11 @@ export default function About() {
                 text: "Consagração, obediência a Deus, unidade, compromisso com a Palavra e amor pelas vidas.",
               },
             ].map((item) => (
-              <div key={item.title} className="border-l border-primary/30 pl-6">
-                <h3 className="font-display text-lg font-semibold text-primary mb-2">
+              <div key={item.title} className="border-l border-primary/30 pl-6 md:pl-8">
+                <h3 className="font-display text-sm sm:text-base md:text-lg font-semibold text-primary mb-2">
                   {item.title}
                 </h3>
-                <p className="text-foreground/60 text-sm leading-relaxed">
+                <p className="text-foreground/60 text-xs sm:text-sm md:text-base leading-relaxed">
                   {item.text}
                 </p>
               </div>

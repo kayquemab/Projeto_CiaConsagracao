@@ -1,4 +1,6 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 import castMariana from "@/assets/cast-mariana.jpg";
 import castRafael from "@/assets/cast-rafael.jpg";
 import castCamila from "@/assets/cast-camila.jpg";
@@ -90,7 +92,26 @@ export default function Cast() {
           <div className="gold-line mx-auto mt-6" />
         </div>
 
-        <div ref={gridRef} className={`grid grid-cols-2 md:grid-cols-4 gap-5 ${gridVisible ? "animate-fade-up" : "opacity-0"}`}>
+        {/* Mobile: Carousel | Desktop: Grid */}
+        <div className="md:hidden">
+          <Carousel 
+            opts={{ loop: true, align: "start" }} 
+            plugins={[Autoplay({ delay: 3000 })]}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {cast.map((actor) => (
+                <CarouselItem key={actor.name} className="pl-2 md:pl-4 basis-full sm:basis-1/2">
+                  <CastCard actor={actor} />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-2" />
+            <CarouselNext className="right-2" />
+          </Carousel>
+        </div>
+
+        <div ref={gridRef} className={`hidden md:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 ${gridVisible ? "animate-fade-up" : "opacity-0"}`}>
           {cast.map((actor) => (
             <CastCard key={actor.name} actor={actor} />
           ))}
@@ -113,10 +134,10 @@ function CastCard({ actor }: { actor: typeof cast[number] }) {
           loading="lazy"
         />
       </div>
-      <div className="p-4">
-        <h3 className="font-display text-base md:text-lg font-semibold mb-0.5">{actor.name}</h3>
+      <div className="p-3 sm:p-4 md:p-5">
+        <h3 className="font-display text-sm sm:text-base md:text-lg font-semibold mb-0.5">{actor.name}</h3>
         <p className="text-primary text-xs font-medium mb-2">{actor.role}</p>
-        <p className="text-foreground/50 text-xs leading-relaxed">{actor.specialty}</p>
+        <p className="text-foreground/50 text-[10px] sm:text-xs leading-relaxed">{actor.specialty}</p>
       </div>
     </div>
   );

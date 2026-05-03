@@ -23,41 +23,41 @@ export default function Contact() {
           <div className="gold-line mt-6" />
         </div>
 
-        <div className="grid md:grid-cols-5 gap-12 md:gap-16">
+        <div className="grid md:grid-cols-5 gap-8 sm:gap-10 md:gap-12 lg:gap-16">
           {/* Form */}
           <form onSubmit={handleSubmit} className="md:col-span-3 space-y-6">
             <div className="grid sm:grid-cols-2 gap-6">
               <div>
-                <label className="text-xs tracking-widest uppercase text-foreground/50 mb-2 block">Nome</label>
+                <label className="text-[11px] sm:text-xs tracking-widest uppercase text-foreground/50 mb-2 block">Nome</label>
                 <input
                   type="text"
                   required
-                  className="w-full bg-transparent border-b border-border/50 pb-3 text-foreground focus:border-primary focus:outline-none transition-colors placeholder:text-foreground/20"
+                  className="w-full bg-transparent border border-border/30 rounded px-4 py-2.5 sm:py-3 text-foreground focus:border-primary focus:outline-none transition-colors placeholder:text-foreground/20"
                   placeholder="Seu nome"
                 />
               </div>
               <div>
-                <label className="text-xs tracking-widest uppercase text-foreground/50 mb-2 block">Email</label>
+                <label className="text-[11px] sm:text-xs tracking-widest uppercase text-foreground/50 mb-2 block">Email</label>
                 <input
                   type="email"
                   required
-                  className="w-full bg-transparent border-b border-border/50 pb-3 text-foreground focus:border-primary focus:outline-none transition-colors placeholder:text-foreground/20"
+                  className="w-full bg-transparent border border-border/30 rounded px-4 py-2.5 sm:py-3 text-foreground focus:border-primary focus:outline-none transition-colors placeholder:text-foreground/20"
                   placeholder="seu@email.com"
                 />
               </div>
             </div>
             <div>
-              <label className="text-xs tracking-widest uppercase text-foreground/50 mb-2 block">Mensagem</label>
+              <label className="text-[11px] sm:text-xs tracking-widest uppercase text-foreground/50 mb-2 block">Mensagem</label>
               <textarea
                 required
                 rows={5}
-                className="w-full bg-transparent border-b border-border/50 pb-3 text-foreground focus:border-primary focus:outline-none transition-colors resize-none placeholder:text-foreground/20"
+                className="w-full bg-transparent border border-border/30 rounded px-4 py-2.5 sm:py-3 text-foreground focus:border-primary focus:outline-none transition-colors resize-none placeholder:text-foreground/20"
                 placeholder="Sua mensagem..."
               />
             </div>
             <button
               type="submit"
-              className="px-8 py-3 bg-primary text-primary-foreground font-semibold text-sm tracking-widest uppercase transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 active:scale-[0.97]"
+              className="px-6 sm:px-8 py-2.5 sm:py-3 min-h-10 bg-primary text-primary-foreground font-semibold text-xs sm:text-sm tracking-widest uppercase transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 active:scale-[0.97]"
             >
               {submitted ? "Mensagem enviada ✓" : "Enviar mensagem"}
             </button>

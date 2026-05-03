@@ -1,4 +1,12 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 const works = [
   {
@@ -38,17 +46,52 @@ export default function Portfolio() {
   const { ref: gridRef, isVisible: gridVisible } = useScrollReveal();
 
   return (
-    <section id="trabalhos" className="py-24 md:py-32 section-padding">
+    <section id="trabalhos" className="section-padding py-20 md:py-32">
       <div className="section-container">
-        <div ref={ref} className={`mb-16 ${isVisible ? "animate-fade-up" : "opacity-0"}`}>
-          <p className="text-sm tracking-[0.3em] uppercase text-primary mb-4">Portfólio</p>
-          <h2 className="text-3xl md:text-5xl font-display font-bold mb-4 text-balance">
+        <div
+          ref={ref}
+          className={`mb-12 md:mb-16 ${isVisible ? "animate-fade-up" : "opacity-0"
+            }`}
+        >
+          <p className="mb-4 text-sm uppercase tracking-[0.3em] text-primary">
+            Portfólio
+          </p>
+
+          <h2 className="mb-4 text-balance font-display text-3xl font-bold md:text-5xl">
             Nossos trabalhos
           </h2>
+
           <div className="gold-line mt-6" />
         </div>
 
-        <div ref={gridRef} className={`grid sm:grid-cols-2 lg:grid-cols-3 gap-5 ${gridVisible ? "animate-fade-up" : "opacity-0"}`}>
+        {/* Mobile: Carousel | Desktop: Grid */}
+        <div className="sm:hidden">
+          <Carousel
+            opts={{ loop: true, align: "center" }}
+            plugins={[Autoplay({ delay: 4000 })]}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-3">
+              {works.map((work) => (
+                <CarouselItem
+                  key={work.title}
+                  className="basis-[86%] pl-3"
+                >
+                  <WorkCard work={work} />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+
+            <CarouselPrevious className="left-2 h-9 w-9 border-primary/20 bg-background/80" />
+            <CarouselNext className="right-2 h-9 w-9 border-primary/20 bg-background/80" />
+          </Carousel>
+        </div>
+
+        <div
+          ref={gridRef}
+          className={`hidden gap-5 sm:grid sm:grid-cols-2 lg:grid-cols-3 ${gridVisible ? "animate-fade-up" : "opacity-0"
+            }`}
+        >
           {works.map((work) => (
             <WorkCard key={work.title} work={work} />
           ))}
@@ -58,21 +101,26 @@ export default function Portfolio() {
   );
 }
 
-function WorkCard({ work }: { work: typeof works[number] }) {
+function WorkCard({ work }: { work: (typeof works)[number] }) {
   return (
-    <div
-      className="group bg-card border border-border/50 p-6 flex flex-col transition-all duration-500 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5"
-    >
-      <div className="flex items-center justify-between mb-4">
-        <span className="text-primary/50 text-sm font-mono tabular-nums">{work.year}</span>
-        <span className="text-[10px] tracking-widest uppercase text-foreground/40 border border-border/50 px-2 py-0.5">
+    <div className="group flex min-h-[260px] flex-col border border-border/50 bg-card p-5 transition-all duration-500 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 sm:min-h-[280px] sm:p-6 md:p-7">
+      <div className="mb-5 flex items-center justify-between gap-3">
+        <span className="font-mono text-sm tabular-nums text-primary/60">
+          {work.year}
+        </span>
+
+        <span className="border border-border/50 px-3 py-1 text-[10px] uppercase tracking-widest text-foreground/40">
           {work.category}
         </span>
       </div>
-      <h3 className="font-display text-xl font-semibold mb-3 group-hover:text-primary transition-colors duration-300">
+
+      <h3 className="mb-4 font-display text-2xl font-semibold transition-colors duration-300 group-hover:text-primary md:text-3xl">
         {work.title}
       </h3>
-      <p className="text-foreground/50 text-sm leading-relaxed flex-1">{work.desc}</p>
+
+      <p className="flex-1 text-sm leading-relaxed text-foreground/55 sm:text-base">
+        {work.desc}
+      </p>
     </div>
   );
 }
