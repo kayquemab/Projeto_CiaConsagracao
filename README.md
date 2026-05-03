@@ -21,15 +21,14 @@ Aplicação web institucional desenvolvida para apresentar a Cia Consagração, 
 
 ## ⚙️ Como executar
 
-Instalar as dependências do projeto:
-
 ```bash
+git clone https://github.com/kayquemab/Projeto_CiaConsagracao
+cd CiaConsagracao
+
+# Instalar dependências
 npm install
-```
 
-Executar o projeto em ambiente de desenvolvimento:
-
-```bash
+# Executar o projeto
 npm run dev
 ```
 
