@@ -8,7 +8,6 @@ Aplicação web institucional desenvolvida para apresentar a Cia Consagração, 
 * TypeScript
 * Vite
 * Tailwind CSS
-* shadcn/ui
 
 ## ✨ Funcionalidades
 
